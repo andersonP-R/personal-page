@@ -1,0 +1,60 @@
+---
+import { COLORS } from "../utils/UI_CONST";
+const { white, gray } = COLORS;
+---
+
+<section id="about" class="about">
+  <div class="about-animation">
+    <h1>this is the about animation</h1>
+  </div>
+
+  <div class="about-description">
+    <h1 class="ab-desc__title">ABOUT<strong> ME</strong></h1>
+    <p class="ab-desc__p1">
+      Hello! My name is Anderson Rivera and I build things for the web. I am a
+      self-taught person who likes to create things that others can use or need.
+    </p>
+    <p class="ab-desc__p2">
+      I usually work with react.js, javascript and some java but I'm always open
+      to learn new things.
+    </p>
+  </div>
+</section>
+
+<style define:vars={{ white, gray }}>
+  .about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0 100px;
+  }
+
+  .about-animation {
+    width: 50%;
+  }
+
+  .about-description {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    /* gap: 20px; */
+  }
+
+  .ab-desc__title {
+    color: var(--white);
+    font-size: 120px;
+  }
+
+  .ab-desc__p1,
+  .ab-desc__p2 {
+    color: var(--gray);
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .ab-desc__p1 {
+    margin-bottom: 20px;
+  }
+</style>

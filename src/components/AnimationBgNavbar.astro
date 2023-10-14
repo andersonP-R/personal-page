@@ -1,0 +1,144 @@
+---
+import Box from "./Box.astro";
+---
+
+<div id="animation-fx-container" class="container">
+  <Box id="box1" className="svg" height="120" width="120" />
+  <Box id="box1" className="svg" height="160" width="160" />
+  <Box id="box2" className="svg" height="300" width="300" />
+  <Box id="box3" className="svg" height="550" width="550" />
+  <Box id="box4" className="svg" height="650" width="650" />
+</div>
+
+<script>
+  import anime from "animejs/lib/anime.es.js";
+  import { $ } from "../helpers";
+  const container = $("#animation-fx-container");
+  const w = window.innerWidth;
+
+  /**
+   * Calcule what kind of device is it. mejorar descripción
+   * @param p phone size
+   * @param c computer size
+   */
+  const calSize = (p: number, c: number): number => (w < 400 ? p : c);
+
+  const options = {
+    root: document.getElementById("#wrapper-links"),
+    rootMargin: "10px 10px 30px 40px",
+    threshold: 0.3,
+  };
+
+  const animation = anime.timeline({
+    duration: 10,
+  });
+
+  const animation2 = anime.timeline();
+
+  const callback: IntersectionObserverCallback = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        container?.classList.add("active");
+        animation2
+          .add({
+            targets: "#box1",
+            opacity: 0.7,
+            delay: 300,
+          })
+          .add(
+            {
+              targets: "#box2",
+              opacity: 0.7,
+            },
+            "-=800"
+          )
+          .add(
+            {
+              targets: "#box3",
+              opacity: 0.7,
+            },
+            "-=900"
+          )
+          .add(
+            {
+              targets: "#box4",
+              opacity: 0.7,
+              complete: function () {
+                animation2.pause();
+              },
+            },
+            "-=900"
+          );
+      } else {
+        container?.classList.remove("active");
+        animation
+          .add(
+            {
+              targets: "#box1",
+              translateX: function () {
+                return anime.random(0, 900);
+              },
+              translateY: function () {
+                return anime.random(0, calSize(900, -500));
+              },
+              opacity: 0,
+            }
+            // "-=2000"
+          )
+          .add({
+            targets: "#box2",
+            translateX: function () {
+              return anime.random(-100, -120);
+            },
+            translateY: function () {
+              return anime.random(0, -250);
+            },
+            opacity: 0,
+          })
+          .add({
+            targets: "#box3",
+            translateX: function () {
+              return anime.random(-100, -400);
+            },
+            translateY: function () {
+              return anime.random(200, 600);
+            },
+            opacity: 0,
+          })
+          .add({
+            targets: "#box4",
+            translateX: function () {
+              return anime.random(calSize(50, 800), calSize(50, 900));
+            },
+            translateY: function () {
+              return anime.random(calSize(-100, -800), calSize(-100, -450));
+            },
+            opacity: 0,
+          });
+      }
+    });
+  };
+
+  let observer = new IntersectionObserver(callback, options);
+  observer.observe(container!);
+  // TODO: detect when the user change of window and stop the oberver
+</script>
+
+<style>
+  .container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+  .svg {
+    position: relative;
+    stroke-dasharray: 1400;
+    stroke-dashoffset: 0;
+  }
+
+  .container.active {
+    opacity: 1;
+  }
+</style>

@@ -1,0 +1,139 @@
+---
+import { COLORS } from "../utils/UI_CONST";
+import AnimationBgNavbar from "./AnimationBgNavbar.astro";
+import HamburguerButton from "./HamburguerButton.astro";
+const { black, white } = COLORS;
+---
+
+<header class="header">
+  <nav class="nav">
+    <div class="wrapper-header">
+      <div class="logo">
+        <h1>logo</h1>
+      </div>
+
+      <HamburguerButton />
+      <div id="wrapper-links" class="wrapper-links">
+        <ul class="links">
+          <li class="link">
+            <a href="#home">Home</a>
+          </li>
+          <li class="link">
+            <a href="#about">About</a>
+          </li>
+          <li class="link">
+            <a href="#experience">Experience</a>
+          </li>
+          <li class="link">
+            <a href="#skills">Skills</a>
+          </li>
+          <li class="link">
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
+        <AnimationBgNavbar />
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  import { $ } from "../helpers";
+  let state = false;
+
+  const button = $("#button");
+  const wrapper = $("#wrapper-links");
+  const link = document.querySelectorAll(".link a");
+
+  const handleClick = () => (state = !state);
+
+  button?.addEventListener("click", () => {
+    handleClick();
+    if (state) {
+      wrapper?.classList.add("active");
+    } else {
+      wrapper?.classList.remove("active");
+    }
+  });
+
+  link.forEach((linkButt) => {
+    linkButt.addEventListener("click", () => {
+      button?.classList.remove("open");
+      handleClick();
+      if (state) {
+        wrapper?.classList.add("active");
+      } else {
+        wrapper?.classList.remove("active");
+      }
+    });
+  });
+</script>
+
+<style define:vars={{ black, white }}>
+  .header {
+    height: 70px;
+  }
+  .nav {
+    position: fixed;
+    width: 100%;
+    background-color: var(--black);
+    box-shadow: 0px 10px 10px var(--black);
+  }
+
+  .wrapper-header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+  }
+
+  .logo {
+    color: white;
+  }
+
+  .wrapper-links {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    left: -101%;
+    overflow: hidden;
+
+    transition: all 0.3s ease;
+    background-color: var(--black);
+  }
+
+  .wrapper-links.active {
+    left: 0;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--white);
+    list-style: none;
+    padding: 20px;
+    font-size: 100px;
+    z-index: 20;
+  }
+
+  .link {
+    z-index: 40;
+    width: 80%;
+    padding: 2px 10px;
+  }
+
+  .link a {
+    text-decoration: none;
+    color: var(--white);
+    cursor: pointer;
+
+    transition: padding 300ms ease;
+  }
+
+  .link a:hover {
+    padding-left: 40px;
+  }
+</style>

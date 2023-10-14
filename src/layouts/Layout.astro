@@ -1,0 +1,40 @@
+---
+import { COLORS } from "./../utils/UI_CONST";
+const { black, gray } = COLORS;
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="UPDATE DESCRIP HERE!!" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+<style is:global define:vars={{ black, gray }}>
+  * {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    font-family: monospace;
+  }
+  html {
+    background-color: var(--black);
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+    scrollbar-color: var(--gray) var(--black);
+    /* height: 1200px; */
+  }
+</style>

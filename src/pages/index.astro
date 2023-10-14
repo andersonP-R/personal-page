@@ -1,0 +1,26 @@
+---
+import NavBar from "../components/NavBar.astro";
+import Layout from "../layouts/Layout.astro";
+import Home from "../sections/Home.astro";
+import About from "../sections/About.astro";
+import Experience from "../sections/Experience.astro";
+import Skillset from "../sections/Skillset.astro";
+---
+
+<Layout title="Anderson Rivera">
+  <NavBar />
+  <main>
+    <Home />
+    <About />
+    <Experience />
+    <Skillset />
+  </main>
+</Layout>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+</style>

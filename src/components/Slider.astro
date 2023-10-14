@@ -1,0 +1,260 @@
+---
+import { COLORS } from "../utils/UI_CONST";
+const { blue, white, gray, black } = COLORS;
+---
+
+<div class="wrapper-animation">
+  <span></span>
+
+  <div class="draw-fx-cont">
+    <svg id="clouds" width="403" height="123" viewBox="0 0 463 183" fill="none">
+      <path
+        class="path-1"
+        d="M37.755 146.997H208.753C220.654 146.997 236 138.785 236 117.309C234.923 94.0108 228.153 86.3785 207.814 80.0408C207.96 61.4458 200.458 50.2896 193.094 43.7204C184.951 36.4564 163.255 31.5841 142.045 39.9305C131.397 23.8232 106.814 10.3069 85.672 16.5591C58.554 24.5785 48.9973 40.5656 44.3318 65.5127C36.8214 64.9979 8.32167 71.2553 4.55752 97.0956C0.303071 126.302 21.4241 147.304 33.0572 146.997H37.755Z"
+        stroke="#000"
+        stroke-width="8"></path>
+      <path
+        class="path-2"
+        d="M308.607 113.997H438.33C447.358 113.997 459 107.777 459 91.5066C458.183 73.8567 453.047 68.0747 437.617 63.2734C437.728 49.1862 432.037 40.7345 426.451 35.7579C420.273 30.2548 403.814 26.5637 387.724 32.8867C379.646 20.6842 360.997 10.4446 344.958 15.1812C324.386 21.2564 317.136 33.3679 313.597 52.2672C307.899 51.8772 286.279 56.6176 283.423 76.1937C280.195 98.3196 296.218 114.23 305.043 113.997H308.607Z"
+        stroke="#000"
+        stroke-width="8"></path>
+
+      <path
+        class="path-3"
+        d="M163.794 178.996H385.649C401.09 178.996 421 168.109 421 139.637C419.602 108.749 410.819 98.6306 384.43 90.2284C384.621 65.5759 374.887 50.7854 365.333 42.0763C354.768 32.4459 326.619 25.9865 299.101 37.0518C285.286 15.6974 253.393 -2.22188 225.962 6.06701C190.779 16.6987 178.38 37.8938 172.327 70.9676C162.583 70.2851 125.607 78.5808 120.723 112.839C115.204 151.559 142.606 179.403 157.699 178.996H163.794Z"
+        stroke="#000"
+        stroke-width="8"></path>
+    </svg>
+
+    <svg
+      class="devices phone"
+      width="54"
+      height="54"
+      viewBox="0 0 24 24"
+      stroke-width="1"
+      stroke={gray}
+      fill="none"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path
+        d="M6 5a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2v-14z"
+      ></path>
+      <path d="M11 4h2"></path>
+      <path d="M12 17v.01"></path>
+    </svg>
+
+    <svg
+      class="devices game-control"
+      width="54"
+      height="54"
+      viewBox="0 0 24 24"
+      stroke-width="1"
+      stroke={gray}
+      fill="none"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path
+        d="M12 5h3.5a5 5 0 0 1 0 10h-5.5l-4.015 4.227a2.3 2.3 0 0 1 -3.923 -2.035l1.634 -8.173a5 5 0 0 1 4.904 -4.019h3.4z"
+      ></path>
+      <path d="M14 15l4.07 4.284a2.3 2.3 0 0 0 3.925 -2.023l-1.6 -8.232"></path>
+      <path d="M8 9v2"></path>
+      <path d="M7 10h2"></path>
+      <path d="M14 10h2"></path>
+    </svg>
+
+    <svg
+      class="devices car"
+      width="54"
+      height="54"
+      viewBox="0 0 24 24"
+      stroke-width="1"
+      stroke={gray}
+      fill="none"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M5 17a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+      <path d="M16 17a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+      <path
+        d="M5 9l2 -4h7.438a2 2 0 0 1 1.94 1.515l.622 2.485h3a2 2 0 0 1 2 2v3"
+      ></path>
+      <path d="M10 9v-4"></path>
+      <path d="M2 7v4"></path>
+      <path
+        d="M22.001 14.001a4.992 4.992 0 0 0 -4.001 -2.001a4.992 4.992 0 0 0 -4 2h-3a4.998 4.998 0 0 0 -8.003 .003"
+      ></path>
+      <path d="M5 12v-3h13"></path>
+    </svg>
+
+    <svg id="t2" width={200} height={200} viewBox="0 0 757 731" fill="none">
+      <path d="M405 179.5L755.5 77.5L749 582.5L405.5 730.5" stroke="white"
+      ></path>
+      <path d="M406 179.5L1 85L12 591.5L406 730.5" stroke="white"></path>
+      <path d="M405.5 179.5V730" stroke="white"></path>
+      <path d="M1.5 85L369.5 1L755.5 77.5" stroke="white"></path>
+    </svg>
+  </div>
+
+  <span></span>
+</div>
+
+<script>
+  import anime from "animejs/lib/anime.es.js";
+  import { $ } from "../helpers";
+
+  const cloudsSVG = $("#clouds");
+  const test2 = $("#t2");
+
+  const animation = anime.timeline({
+    // loop: true,
+  });
+  animation
+    .add(
+      {
+        targets: "#clouds .path-1",
+        strokeDashoffset: [anime.setDashoffset, 0],
+        easing: "easeInOutSine",
+        duration: 1000,
+        direction: "alternative",
+        opacity: 1,
+        delay: 1000,
+      },
+      "-=600"
+    )
+    .add(
+      {
+        targets: "#clouds .path-2",
+        strokeDashoffset: [anime.setDashoffset, 0],
+        easing: "easeInOutSine",
+        duration: 1000,
+        direction: "alternative",
+        opacity: 1,
+      },
+      "-=600"
+    )
+    .add(
+      {
+        targets: "#clouds .path-3",
+        strokeDashoffset: [anime.setDashoffset, 0],
+        easing: "easeInOutSine",
+        duration: 900,
+        direction: "alternative",
+        opacity: 1,
+      },
+      "-=800"
+    )
+    .add({
+      targets: ".path-3",
+      fill: "#9ea8ab",
+      stroke: "#1d1e22",
+      easing: "easeInOutSine",
+    })
+    .add(
+      {
+        targets: [".path-1", ".path-2"],
+        stroke: "#9ea8ab",
+        easing: "easeInOutSine",
+      },
+      "-=1000"
+    )
+    .add(
+      {
+        targets: ".devices",
+        opacity: 1,
+        easing: "easeInOutSine",
+      },
+      "-=200"
+    );
+</script>
+
+<style define:vars={{ blue, white, gray, black }}>
+  .wrapper-animation {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    /* box-shadow: inset 0px 0px 30px var(--white); */
+    /* border: 1px solid #ddd; */
+    overflow: hidden;
+  }
+
+  .wrapper-animation span {
+    height: 100%;
+    width: 5%;
+  }
+
+  .wrapper-animation span:nth-child(1) {
+    background-color: var(--black);
+    box-shadow: 10px 0px 20px #0000002f;
+  }
+
+  .wrapper-animation span:nth-child(3) {
+    background-color: var(--black);
+    box-shadow: -10px 0px 20px #0000002c;
+  }
+
+  .draw-fx-cont {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 88%;
+    /* border: 1px solid red; */
+    z-index: -1;
+  }
+
+  #clouds {
+    position: absolute;
+    /* bottom: 30%; */
+    /* background: #0000ff2f; */
+    z-index: -1;
+    /* opacity: 0; */
+  }
+
+  #clouds .path-1 {
+    stroke-dasharray: 620;
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+
+  #clouds .path-2 {
+    stroke-dasharray: 500;
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+
+  #clouds .path-3 {
+    stroke-dasharray: 810;
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+
+  .devices {
+    opacity: 0;
+  }
+
+  .phone {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+  }
+
+  .game-control {
+    position: absolute;
+    top: 14%;
+    right: 45%;
+  }
+
+  .car {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+  }
+
+  #t2 {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    /* background: #0000ff2f; */
+    z-index: -1;
+    opacity: 0;
+  }
+</style>

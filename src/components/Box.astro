@@ -1,0 +1,60 @@
+---
+interface Props {
+  width: string;
+  height: string;
+  className: string;
+  id: string;
+}
+const { width, height, className, id } = Astro.props;
+---
+
+<svg
+  class={className}
+  id={id}
+  width={width}
+  height={height}
+  viewBox="0 0 757 731"
+  fill="none"
+>
+  <path d="M405 179.5L755.5 77.5L749 582.5L405.5 730.5" stroke="white"></path>
+  <path d="M406 179.5L1 85L12 591.5L406 730.5" stroke="white"></path>
+  <path d="M405.5 179.5V730" stroke="white"></path>
+  <path d="M1.5 85L369.5 1L755.5 77.5" stroke="white"></path>
+</svg>
+
+<script>
+  import anime from "animejs/lib/anime.es.js";
+  const link = document.querySelectorAll(".link a");
+  const svg = document.querySelectorAll("svg");
+
+  link.forEach((el) => {
+    el.addEventListener("mouseenter", () => {
+      svg[2].classList.add("active");
+      anime({
+        targets: svg[2],
+        scale: 1.2,
+        stroke: "red",
+      });
+    });
+  });
+
+  link.forEach((el) => {
+    el.addEventListener("mouseleave", () => {
+      svg[2].classList.remove("active");
+      anime({
+        targets: svg[2],
+        scale: 1,
+      });
+    });
+  });
+</script>
+
+<style>
+  svg {
+    /* fill: blue; */
+  }
+
+  svg.active {
+    /* fill: blue; */
+  }
+</style>
