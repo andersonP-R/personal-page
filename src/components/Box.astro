@@ -26,23 +26,31 @@ const { width, height, className, id } = Astro.props;
   import anime from "animejs/lib/anime.es.js";
   const link = document.querySelectorAll(".link a");
   const svg = document.querySelectorAll("svg");
+  // const links = Array.from(link).map((el) => el.id);
+  // const dic = links.map((link, i) => ({
+  //   link,
+  //   i,
+  // }));
 
-  link.forEach((el) => {
+  // console.log(dic[0]);
+
+  link.forEach((el, i) => {
     el.addEventListener("mouseenter", () => {
-      svg[2].classList.add("active");
+      // console.log(dic[i].link);
+
+      svg[i].classList.add("active");
       anime({
-        targets: svg[2],
+        targets: svg[i],
         scale: 1.2,
-        stroke: "red",
       });
     });
   });
 
-  link.forEach((el) => {
+  link.forEach((el, i) => {
     el.addEventListener("mouseleave", () => {
-      svg[2].classList.remove("active");
+      svg[i].classList.remove("active");
       anime({
-        targets: svg[2],
+        targets: svg[i],
         scale: 1,
       });
     });

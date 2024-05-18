@@ -17,11 +17,11 @@ import Box from "./Box.astro";
   const w = window.innerWidth;
 
   /**
-   * Calcule what kind of device is it. mejorar descripción
+   * Calcule what kind of device is it.
    * @param p phone size
    * @param c computer size
    */
-  const calSize = (p: number, c: number): number => (w < 400 ? p : c);
+  const calSize = (p: number, c: number): number => (w < 600 ? p : c);
 
   const options = {
     root: document.getElementById("#wrapper-links"),
@@ -108,10 +108,10 @@ import Box from "./Box.astro";
           .add({
             targets: "#box4",
             translateX: function () {
-              return anime.random(calSize(50, 800), calSize(50, 900));
+              return anime.random(calSize(-400, 800), calSize(500, 900));
             },
             translateY: function () {
-              return anime.random(calSize(-100, -800), calSize(-100, -450));
+              return anime.random(calSize(-350, -800), calSize(-450, -450));
             },
             opacity: 0,
           });
@@ -129,7 +129,7 @@ import Box from "./Box.astro";
     position: absolute;
     top: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     opacity: 0;
   }
   .svg {
@@ -139,6 +139,6 @@ import Box from "./Box.astro";
   }
 
   .container.active {
-    opacity: 1;
+    opacity: 0.3;
   }
 </style>
