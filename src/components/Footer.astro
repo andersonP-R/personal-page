@@ -1,0 +1,50 @@
+---
+import { COLORS } from "../utils/UI_CONST";
+const { white } = COLORS;
+---
+
+<footer>
+  <div class="wrapper">
+    <div class="links">
+      <span>link1</span>
+      <span>link2</span>
+      <span>link3</span>
+    </div>
+    <div class="signature">
+      <span></span>
+      <span class="s-sign">Designed and build by Anderson Rivera</span>
+      <div>ToUp btn</div>
+    </div>
+  </div>
+</footer>
+
+<style define:vars={{ white }}>
+  .wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    padding: 10px 20px;
+    color: var(--white);
+    gap: 10px;
+  }
+
+  .links {
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    gap: 10px;
+  }
+
+  .signature {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .s-sign {
+      text-align: center;
+      flex: 1;
+    }
+  }
+</style>
