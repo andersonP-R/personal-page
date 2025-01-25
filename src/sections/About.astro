@@ -21,6 +21,24 @@ const { white, gray } = COLORS;
   </div>
 </section>
 
+<script>
+  const $aboutContainer = document.getElementById("about");
+  const options = {
+    root: document.getElementById("#wrapper-links"),
+    rootMargin: "10px 10px 30px 40px",
+    threshold: 0.3,
+  };
+
+  const callback: IntersectionObserverCallback = (entries, observer) => {
+    entries.forEach((entry) => {
+      console.log(entry.isIntersecting);
+    });
+  };
+
+  let observer = new IntersectionObserver(callback, options);
+  observer.observe($aboutContainer!);
+</script>
+
 <style define:vars={{ white, gray }}>
   .about {
     display: flex;
