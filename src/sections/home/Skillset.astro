@@ -1,0 +1,31 @@
+---
+import { COLORS } from "../../utils/UI_CONST";
+
+const { white } = COLORS;
+---
+
+<section id="skills" class="skills">
+  <div class="skill-description">
+    <h1>skillset</h1>
+  </div>
+
+  <div class="skill-projects">
+    <h1>skills over here!</h1>
+  </div>
+</section>
+
+<style define:vars={{ white }}>
+  .skills {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 60px 100px;
+  }
+
+  .skill-description {
+    color: var(--white);
+    font-size: 50px;
+    text-transform: uppercase;
+  }
+</style>
